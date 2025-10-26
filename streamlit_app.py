@@ -68,24 +68,29 @@ with col1:
     if not st.session_state.quiz:
         st.info("사이드바에서 학년과 단원을 선택하고 '문제 생성'을 눌러 시작하세요.")
     else:
-        i = st.session_state.index
-        q = st.session_state.quiz[i]
-        st.markdown(f"### 문제 {i+1}/{len(st.session_state.quiz)}")
-        st.write(q["question"])
-        choice = st.radio("보기", q["choices"], key=f"q{i}")
-        if st.button("제출", key=f"submit_{i}"):
-            st.session_state.user_answers.append({"id": q["id"], "selected": choice, "answer": q["answer"], "concept": q["concept"]})
-            if choice != q["answer"]:
-                st.session_state.wrong_counts[q["concept"]] = st.session_state.wrong_counts.get(q["concept"], 0) + 1
-            st.session_state.index += 1
-            if st.session_state.index >= len(st.session_state.quiz):
-                st.success("퀴즈 완료! 우측에서 결과를 확인하세요.")
-            st.experimental_rerun()
+        # index가 문제 수를 초과하거나 같을 경우 질문 접근을 차단
+        if st.session_state.index >= len(st.session_state.quiz):
+            st.success("퀴즈가 완료되었습니다. 우측에서 결과를 확인하세요.")
+        else:
+            i = st.session_state.index
+            q = st.session_state.quiz[i]
+            st.markdown(f"### 문제 {i+1}/{len(st.session_state.quiz)}")
+            st.write(q["question"])
+            choice = st.radio("보기", q["choices"], key=f"q{i}")
+            if st.button("제출", key=f"submit_{i}"):
+                st.session_state.user_answers.append({"id": q["id"], "selected": choice, "answer": q["answer"], "concept": q["concept"]})
+                if choice != q["answer"]:
+                    st.session_state.wrong_counts[q["concept"]] = st.session_state.wrong_counts.get(q["concept"], 0) + 1
+                st.session_state.index += 1
+                # 다음으로 넘어간 뒤 index가 범위를 벗어나면 안전하게 완료 상태로 처리
+                if st.session_state.index >= len(st.session_state.quiz):
+                    st.success("퀴즈 완료! 우측에서 결과를 확인하세요.")
+                st.experimental_rerun()
 
 with col2:
     st.header("진행/결과")
     if st.session_state.quiz:
-        st.write(f"현재 문제: {st.session_state.index} / {len(st.session_state.quiz)}")
+        st.write(f"현재 문제: {min(st.session_state.index, len(st.session_state.quiz))} / {len(st.session_state.quiz)}")
         if st.session_state.user_answers:
             correct = sum(1 for a in st.session_state.user_answers if a["selected"] == a["answer"])
             st.write(f"정답: {correct}  오답: {len(st.session_state.user_answers)-correct}")
