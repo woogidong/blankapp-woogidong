@@ -4,6 +4,21 @@ import pandas as pd
 
 st.set_page_config(page_title="수학 개념 퀴즈", layout="wide")
 
+# 안전한 재실행 래퍼 (환경에 따라 st.experimental_rerun 또는 st.experimental.rerun 사용)
+def safe_rerun():
+    try:
+        # 기존 API 시도
+        if hasattr(st, "experimental_rerun"):
+            st.experimental_rerun()
+            return
+        # 일부 버전에서는 nested namespace로 이동했을 수 있음
+        if hasattr(st, "experimental") and hasattr(st.experimental, "rerun"):
+            st.experimental.rerun()
+            return
+    except Exception:
+        # 재실행이 지원되지 않으면 무시 (페이지는 다음 렌더에서 갱신됨)
+        pass
+
 # 간단한 샘플 문제 은행 (실제 앱에서는 외부 JSON/DB로 분리)
 QUESTION_BANK = {
     "중학교 1학년": {
@@ -60,7 +75,7 @@ with st.sidebar:
         st.session_state.index = 0
         st.session_state.user_answers = []
         st.session_state.wrong_counts = {}
-        st.experimental_rerun()
+        safe_rerun()
 
 col1, col2 = st.columns([3,1])
 
@@ -85,7 +100,7 @@ with col1:
                 # 다음으로 넘어간 뒤 index가 범위를 벗어나면 안전하게 완료 상태로 처리
                 if st.session_state.index >= len(st.session_state.quiz):
                     st.success("퀴즈 완료! 우측에서 결과를 확인하세요.")
-                st.experimental_rerun()
+                safe_rerun()
 
 with col2:
     st.header("진행/결과")
@@ -115,4 +130,4 @@ with col2:
                 st.session_state.index = 0
                 st.session_state.user_answers = []
                 st.session_state.wrong_counts = {}
-                st.experimental_rerun()
+                safe_rerun()
