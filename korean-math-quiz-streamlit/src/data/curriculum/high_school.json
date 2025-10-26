@@ -1,0 +1,53 @@
+{
+  "curriculum": {
+    "high_school": {
+      "topics": [
+        {
+          "name": "Algebra",
+          "concepts": [
+            "Linear equations",
+            "Quadratic equations",
+            "Polynomials",
+            "Functions and graphs"
+          ]
+        },
+        {
+          "name": "Geometry",
+          "concepts": [
+            "Triangles",
+            "Circles",
+            "Trigonometry",
+            "Coordinate geometry"
+          ]
+        },
+        {
+          "name": "Calculus",
+          "concepts": [
+            "Limits",
+            "Derivatives",
+            "Integrals",
+            "Applications of calculus"
+          ]
+        },
+        {
+          "name": "Statistics",
+          "concepts": [
+            "Descriptive statistics",
+            "Probability",
+            "Inferential statistics",
+            "Data interpretation"
+          ]
+        },
+        {
+          "name": "Discrete Mathematics",
+          "concepts": [
+            "Set theory",
+            "Logic",
+            "Combinatorics",
+            "Graph theory"
+          ]
+        }
+      ]
+    }
+  }
+}

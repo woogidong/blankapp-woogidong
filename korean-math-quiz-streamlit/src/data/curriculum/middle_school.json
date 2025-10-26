@@ -1,0 +1,112 @@
+{
+  "curriculum": {
+    "grade_levels": [
+      {
+        "grade": "6",
+        "topics": [
+          {
+            "name": "Numbers and Operations",
+            "concepts": [
+              "Whole numbers",
+              "Fractions",
+              "Decimals",
+              "Ratios"
+            ]
+          },
+          {
+            "name": "Algebra",
+            "concepts": [
+              "Patterns and relationships",
+              "Simple equations",
+              "Inequalities"
+            ]
+          },
+          {
+            "name": "Geometry",
+            "concepts": [
+              "Shapes and their properties",
+              "Area and perimeter",
+              "Volume"
+            ]
+          },
+          {
+            "name": "Data and Probability",
+            "concepts": [
+              "Collecting data",
+              "Interpreting data",
+              "Basic probability"
+            ]
+          }
+        ]
+      },
+      {
+        "grade": "7",
+        "topics": [
+          {
+            "name": "Integers and Rational Numbers",
+            "concepts": [
+              "Operations with integers",
+              "Understanding rational numbers"
+            ]
+          },
+          {
+            "name": "Expressions and Equations",
+            "concepts": [
+              "Simplifying expressions",
+              "Solving equations"
+            ]
+          },
+          {
+            "name": "Geometry",
+            "concepts": [
+              "Angles",
+              "Triangles",
+              "Transformations"
+            ]
+          },
+          {
+            "name": "Statistics",
+            "concepts": [
+              "Mean, median, mode",
+              "Probability experiments"
+            ]
+          }
+        ]
+      },
+      {
+        "grade": "8",
+        "topics": [
+          {
+            "name": "Real Numbers",
+            "concepts": [
+              "Understanding real numbers",
+              "Operations with real numbers"
+            ]
+          },
+          {
+            "name": "Functions",
+            "concepts": [
+              "Understanding functions",
+              "Linear functions"
+            ]
+          },
+          {
+            "name": "Geometry",
+            "concepts": [
+              "Pythagorean theorem",
+              "Circles",
+              "Surface area and volume"
+            ]
+          },
+          {
+            "name": "Data Analysis",
+            "concepts": [
+              "Analyzing data sets",
+              "Probability distributions"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

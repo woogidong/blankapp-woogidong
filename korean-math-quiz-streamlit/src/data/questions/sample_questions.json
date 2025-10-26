@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the value of x in the equation 2x + 3 = 11?",
+      "options": {
+        "A": "4",
+        "B": "3",
+        "C": "5",
+        "D": "2"
+      },
+      "correct_answer": "A",
+      "topic": "Algebra"
+    },
+    {
+      "id": 2,
+      "question": "What is the area of a triangle with a base of 10 and a height of 5?",
+      "options": {
+        "A": "25",
+        "B": "50",
+        "C": "15",
+        "D": "30"
+      },
+      "correct_answer": "A",
+      "topic": "Geometry"
+    },
+    {
+      "id": 3,
+      "question": "If the function f(x) = 3x^2 + 2, what is f(2)?",
+      "options": {
+        "A": "14",
+        "B": "12",
+        "C": "10",
+        "D": "8"
+      },
+      "correct_answer": "A",
+      "topic": "Functions"
+    },
+    {
+      "id": 4,
+      "question": "What is the derivative of f(x) = x^3?",
+      "options": {
+        "A": "3x^2",
+        "B": "x^2",
+        "C": "2x",
+        "D": "3x"
+      },
+      "correct_answer": "A",
+      "topic": "Calculus"
+    },
+    {
+      "id": 5,
+      "question": "Solve for y: 3y - 6 = 0.",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "0",
+        "D": "1"
+      },
+      "correct_answer": "A",
+      "topic": "Algebra"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+[general]
+email = "your_email@example.com"
+theme = "dark"
+primaryColor = "#1E90FF"
+font = "sans serif"
+[server]
+headless = true
+port = 8501
+enableCORS = false
+[global]
+maxCachedMessageSize = 1000000
